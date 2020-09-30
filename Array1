@@ -1,0 +1,51 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	char menu;
+	int num;
+	int quiz[50];
+	int mid[50];
+	int final[50];
+	
+	do {
+		cout << setw(40)<<setfill('=')<<" "<<endl;
+		cout << setw(20)<<setfill(' ')<<"MENU"<<setw(20)<<setfill(' ') << endl;
+		cout << setw(40)<<setfill('=')<<" "<<endl;
+		cout << "1.Input student records" << endl;
+		cout << "2.View all student records" << endl;
+		cout << "3.Exit" << endl;
+		cout << "Select menu : ";
+		cin >> menu;
+		if (menu == '1') {
+			cout << "Input Number of Student : ";
+			cin >> num;
+
+			for (int i = 0; i < num; i++) 
+			{
+				cout << "Number" << i+1 << endl;
+				cout << " Input Quiz : ";
+				cin >> quiz[i];
+				cout << " Input Midterm : ";
+				cin >> mid[i];
+				cout << " Input Final : ";
+				cin >> final[i];
+				cout << endl;
+			}cout << setw(40)<<setfill('=')<<" "<<endl;
+	    }
+		else if (menu == '2') {
+			cout << setw(40)<<setfill('-')<<" "<<endl;
+			cout << "StdID" << setw(7)<<setfill(' ') << "Quiz" << setw(10)<<setfill(' ') << "Midterm" << setw(10)<<setfill(' ') << "Final" << endl;
+			cout << setw(40)<<setfill('-')<<" "<<endl;
+
+			for (int i = 0; i < num; i++) 
+			{
+				cout << i+1 << setw(10)<<setfill(' ') << quiz[i] << setw(8)<<setfill(' ') << mid[i] << setw(12)<<setfill(' ') << final[i] << endl;
+			} cout << setw(40)<<setfill('-')<<" "<<endl;
+		
+		} else cout << "Exit"<< endl;
+	} while(menu != '3');
+	
+	return(0);
+}
